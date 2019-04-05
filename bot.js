@@ -460,9 +460,9 @@ const devs = ["531192606755913739"]
 const adminprefix = "4";
 client.on('message', message => {
   
-let em1 = client.guilds.get("540192448568229908").emojis.find(r => r.name === "09"); //wrong
+let em1 = client.guilds.get("563633687724294165").emojis.find(r => r.name === "09"); //wrong
 
-let em2 = client.guilds.get("540192448568229908").emojis.find(r => r.name === "08"); //right
+let em2 = client.guilds.get("563633687724294165").emojis.find(r => r.name === "08"); //right
 
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!devs.includes(message.author.id)) return;
