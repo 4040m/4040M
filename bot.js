@@ -452,10 +452,6 @@ function play(guild, song, message) {
 		embed.setAuthor(`Now playing 🎶 ${serverQueue.songs[0].title}`)
 		embed.setURL(serverQueue.songs[0].url)
 		serverQueue.textChannel.send(embed)
-	},10);
-}
-
-}
  
   });
 
