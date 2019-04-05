@@ -34,17 +34,17 @@ const client = new Discord.Client({disableEveryone: true});
 
 const request = require('request');
 
-const prefix = '4'
+const prefix = 'D'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
 const config = {
-    prefix : "4",
-    owner : ['531192606755913739'],
+    prefix : "D",
+    owner : ['539287859878821897'],
 };
-
+//By Request of [ function ]
 var color = new Discord.RichEmbed().setColor('#000000').setColor('#36393e')
 function e(message, args) {
 	var embed = new Discord.RichEmbed()
@@ -53,14 +53,14 @@ function e(message, args) {
 	.setFooter(`By Request of ${message.author.username}`);
 	message.channel.sendEmbed(embed);
 };
-
+//Errors [ function ]
 function err(message, args) {
 	var embed = new Discord.RichEmbed()
 	.setColor(color.color)
 	.setAuthor(args, "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Feedbin-Icon-error.svg/1000px-Feedbin-Icon-error.svg.png")
 	message.channel.sendEmbed(embed);
 };
-
+//Requested by [ function ]
 function ee(message, args) {
 	var embed = new Discord.RichEmbed()
 	.setColor(color.color)
@@ -68,7 +68,7 @@ function ee(message, args) {
 	.setFooter(`Requested by ${message.author.username}`);
 	message.channel.sendEmbed(embed);
 };
-
+//Left the voice channel [ function ] ,-,
 function L(message, args) {
 	var embed = new Discord.RichEmbed()
 	.setColor(color.color)
@@ -76,14 +76,14 @@ function L(message, args) {
 	.setFooter(`By Request of ${message.author.username}`);
 	message.channel.sendEmbed(embed);
 }
-
+//Current volume [ function ]
 function V(message, args) {
 	var embed = new Discord.RichEmbed()
 	.setColor(color.color)
 	.setAuthor(args, "https://www.iconsdb.com/icons/preview/red/volume-up-4-xxl.png")
 	message.channel.sendEmbed(embed);
 }
-
+// For the skip command
 function S(message, args) {
 	var embed = new Discord.RichEmbed()
 	.setColor(color.color)
@@ -452,14 +452,78 @@ function play(guild, song, message) {
 		embed.setAuthor(`Now playing 🎶 ${serverQueue.songs[0].title}`)
 		embed.setURL(serverQueue.songs[0].url)
 		serverQueue.textChannel.send(embed)
+	},10);
+}
+
+const devs = ["539287859878821897"]
+ 
+const adminprefix = "D";
+client.on('message', message => {
+  
+let em1 = client.guilds.get("540192448568229908").emojis.find(r => r.name === "09"); //wrong
+
+let em2 = client.guilds.get("540192448568229908").emojis.find(r => r.name === "08"); //right
+
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!devs.includes(message.author.id)) return;
+     
+  if (message.content.startsWith(adminprefix + 'ply')) {
+    client.user.setGame(argresult);
+    var embed = new Discord.RichEmbed()
+    .setDescription(`${em2} | **تم جعل البلاينج : __${argresult}__ .**`)
+    if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال كلام** . `)
+      message.channel.sendEmbed(embed)
+  } else
+    if (message.content === (adminprefix + "Percie")) {
+      message.channel.sendEmbed(`${em2} | **تم الخروج من السيرفرات كله**`)
+      message.channel.sendEmbed(embed)
+    message.guild.leave();        
+  } else  
+  if (message.content.startsWith(adminprefix + 'wt')) {
+  client.user.setActivity(argresult, {type:'WATCHING'});
+  var embeed = new Discord.RichEmbed()
+  .setDescription(`${em2} | **تم جعل الوتشينق : __${argresult}__ .**`)
+  if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال كلام** . `)
+  message.channel.sendEmbed(embeed)
+  } else
+  if (message.content.startsWith(adminprefix + 'ls')) {
+  client.user.setActivity(argresult , {type:'LISTENING'});
+  var embeeed = new Discord.RichEmbed()
+  .setDescription(`${em2} | **تم جعل الليسينينج : __${argresult}__ .**`)
+  if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال كلام** . `)
+  message.channel.sendEmbed(embeeed)
+  } else    
+    if (message.content.startsWith(adminprefix + 'setname')) {
+  client.user.setUsername(argresult).then
+  var embeeed = new Discord.RichEmbed()
+  .setDescription(`${em2} | **تم جعل الاسم : __${argresult}__ .**`)
+  if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال الاسم** . `)
+  message.channel.sendEmbed(embeeed)
+  var eembeed = new Discord.RichEmbed()
+  .setDescription(`${em2} | **تم جعل الصوره : __${argresult}__ .**`)
+  message.channel.sendEmbed(eembeed)
+  return message.reply("**You Can't Change Your Name ,Only After Two Hours :>**");
+  } else
+    if (message.content.startsWith(adminprefix + 'setavatar')) {
+  client.user.setAvatar(argresult);
+    message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
+        } else    
+  if (message.content.startsWith(adminprefix + 'twitch')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/mohamedgamal");
+    var embeede = new Discord.RichEmbed()
+    .setDescription(`${em2} | **تم جعل الاستريم : __${argresult}__ .**`)
+    if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال كلام** . `)
+    message.channel.sendEmbed(embeede)
+
+    }
  
   });
 
 client.on('message', message => {
-    if (message.content === '4help') {
+    if (message.content === 'Dhelp') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك**')
-        .setDescription('** ( 4 ) برفكس البوت**')
+        .setDescription('** ( N ) برفكس البوت**')
         .addField('Play أوامر', '1.play    2.p    3.search    4.ply')
         .addField('Skip أوامر', '1.Skip    2.ski    3.s    4.sk')
         .addField('Stop أوامر', '1.Stop    2.st    3.sto')
