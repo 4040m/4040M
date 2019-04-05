@@ -34,7 +34,7 @@ const client = new Discord.Client({disableEveryone: true});
 
 const request = require('request');
 
-const prefix = 'D'
+const prefix = '4'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
