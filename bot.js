@@ -455,67 +455,7 @@ function play(guild, song, message) {
 	},10);
 }
 
-const devs = ["531192606755913739"]
- 
-const adminprefix = "4";
-client.on('message', message => {
-  
-let em1 = client.guilds.get("563633687724294165").emojis.find(r => r.name === "09"); //wrong
-
-let em2 = client.guilds.get("563633687724294165").emojis.find(r => r.name === "08"); //right
-
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!devs.includes(message.author.id)) return;
-     
-  if (message.content.startsWith(adminprefix + 'ply')) {
-    client.user.setGame(argresult);
-    var embed = new Discord.RichEmbed()
-    .setDescription(`${em2} | **تم جعل البلاينج : __${argresult}__ .**`)
-    if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال كلام** . `)
-      message.channel.sendEmbed(embed)
-  } else
-    if (message.content === (adminprefix + "Percie")) {
-      message.channel.sendEmbed(`${em2} | **تم الخروج من السيرفرات كله**`)
-      message.channel.sendEmbed(embed)
-    message.guild.leave();        
-  } else  
-  if (message.content.startsWith(adminprefix + 'wt')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-  var embeed = new Discord.RichEmbed()
-  .setDescription(`${em2} | **تم جعل الوتشينق : __${argresult}__ .**`)
-  if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال كلام** . `)
-  message.channel.sendEmbed(embeed)
-  } else
-  if (message.content.startsWith(adminprefix + 'ls')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-  var embeeed = new Discord.RichEmbed()
-  .setDescription(`${em2} | **تم جعل الليسينينج : __${argresult}__ .**`)
-  if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال كلام** . `)
-  message.channel.sendEmbed(embeeed)
-  } else    
-    if (message.content.startsWith(adminprefix + 'setname')) {
-  client.user.setUsername(argresult).then
-  var embeeed = new Discord.RichEmbed()
-  .setDescription(`${em2} | **تم جعل الاسم : __${argresult}__ .**`)
-  if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال الاسم** . `)
-  message.channel.sendEmbed(embeeed)
-  var eembeed = new Discord.RichEmbed()
-  .setDescription(`${em2} | **تم جعل الصوره : __${argresult}__ .**`)
-  message.channel.sendEmbed(eembeed)
-  return message.reply("**You Can't Change Your Name ,Only After Two Hours :>**");
-  } else
-    if (message.content.startsWith(adminprefix + 'setavatar')) {
-  client.user.setAvatar(argresult);
-    message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
-        } else    
-  if (message.content.startsWith(adminprefix + 'twitch')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/mohamedgamal");
-    var embeede = new Discord.RichEmbed()
-    .setDescription(`${em2} | **تم جعل الاستريم : __${argresult}__ .**`)
-    if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال كلام** . `)
-    message.channel.sendEmbed(embeede)
-
-    }
+}
  
   });
 
