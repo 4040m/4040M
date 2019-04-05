@@ -44,7 +44,7 @@ const config = {
     prefix : "4",
     owner : ['531192606755913739'],
 };
-//By Request of [ function ]
+
 var color = new Discord.RichEmbed().setColor('#000000').setColor('#36393e')
 function e(message, args) {
 	var embed = new Discord.RichEmbed()
@@ -53,14 +53,14 @@ function e(message, args) {
 	.setFooter(`By Request of ${message.author.username}`);
 	message.channel.sendEmbed(embed);
 };
-//Errors [ function ]
+
 function err(message, args) {
 	var embed = new Discord.RichEmbed()
 	.setColor(color.color)
 	.setAuthor(args, "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Feedbin-Icon-error.svg/1000px-Feedbin-Icon-error.svg.png")
 	message.channel.sendEmbed(embed);
 };
-//Requested by [ function ]
+
 function ee(message, args) {
 	var embed = new Discord.RichEmbed()
 	.setColor(color.color)
@@ -68,7 +68,7 @@ function ee(message, args) {
 	.setFooter(`Requested by ${message.author.username}`);
 	message.channel.sendEmbed(embed);
 };
-//Left the voice channel [ function ] ,-,
+
 function L(message, args) {
 	var embed = new Discord.RichEmbed()
 	.setColor(color.color)
@@ -76,14 +76,14 @@ function L(message, args) {
 	.setFooter(`By Request of ${message.author.username}`);
 	message.channel.sendEmbed(embed);
 }
-//Current volume [ function ]
+
 function V(message, args) {
 	var embed = new Discord.RichEmbed()
 	.setColor(color.color)
 	.setAuthor(args, "https://www.iconsdb.com/icons/preview/red/volume-up-4-xxl.png")
 	message.channel.sendEmbed(embed);
 }
-// For the skip command
+
 function S(message, args) {
 	var embed = new Discord.RichEmbed()
 	.setColor(color.color)
